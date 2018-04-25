@@ -1,0 +1,18 @@
+OpenWindow="Memory1", DockArea=BOTTOM, x=0, y=0, w=959, h=238, FilterBarShown=0, 
+OpenWindow="Registers", DockArea=RIGHT, x=0, y=1, w=584, h=328, FilterBarShown=0, 
+OpenWindow="Console", DockArea=BOTTOM, x=1, y=0, w=958, h=238, FilterBarShown=0, 
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=2, w=584, h=487, FilterBarShown=1, 
+OpenWindow="Watched Data", DockArea=RIGHT, x=0, y=3, w=584, h=500, FilterBarShown=0, 
+OpenWindow="Breakpoints", DockArea=LEFT, x=0, y=1, w=571, h=444, FilterBarShown=0, 
+OpenWindow="Functions", DockArea=LEFT, x=0, y=3, w=571, h=570, FilterBarShown=1, 
+OpenWindow="Source Files", DockArea=LEFT, x=0, y=2, w=571, h=448, FilterBarShown=1, 
+OpenWindow="Tasks", DockArea=LEFT, x=0, y=0, w=571, h=272, FilterBarShown=0, 
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=584, h=419, FilterBarShown=0, ExecCountersShown=0
+OpenToolbar="Debug", Floating=0, x=0, y=0
+TableHeader="Registers", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[157;155;322]
+TableHeader="Global Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type"], ColWidths=[200;114;114;66;317]
+TableHeader="Watched Data", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Size";"Refresh";"Type"], ColWidths=[114;114;114;66;91;85]
+TableHeader="Breakpoints", SortCol="State", SortOrder="ASCENDING", VisibleCols=["State";"Location";"Permitted Impl.";"Actual Impl.";"Context";"Task Filter";"Skip #";"Condition"], ColWidths=[122;244;149;125;485;109;85;106]
+TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[145;101;56;45;198]
+TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[150;86;66;84;916]
+TableHeader="Tasks", SortCol="None", SortOrder="ASCENDING", VisibleCols=["ID";"Priority";"Name";"Status";"Timeout";"Notify Value";"Notify State";"Stack Info (Free / Size)";"Run Count";"Mutex Count"], ColWidths=[10;10;10;10;10;10;10;10;10;481]
