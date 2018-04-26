@@ -28,9 +28,9 @@ static THD_FUNCTION(Thread1, arg) {
   (void)arg;
   chRegSetThreadName("blinker");
   while (true) {
-    palClearPad(GPIOC, GPIOC_BUTTON);
+    palClearPad(GPIOC, GPIOC_LED);
     chThdSleepMilliseconds(50);
-    palSetPad(GPIOC, GPIOC_BUTTON);
+    palSetPad(GPIOC, GPIOC_LED);
     chThdSleepMilliseconds(50);
   }
 }
@@ -54,9 +54,9 @@ int main(void) {
 
   while (true) {
 
-    for (i = 0; i < MOTORNUM; i++) {
-      pins[i].dutycycle = pins[i].dutycycle >= 10000 ? 0 : pins[i].dutycycle + 200;
-    }
+//    for (i = 0; i < MOTORNUM; i++) {
+//      pins[i].dutycycle = pins[i].dutycycle >= 10000 ? 0 : pins[i].dutycycle + 200;
+//    }
 
     chThdSleepMilliseconds(20);
 

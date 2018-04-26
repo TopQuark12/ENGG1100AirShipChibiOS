@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -14,14 +14,14 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   11              		.file	"st.c"
   12              		.text
   13              	.Ltext0:
-  14              		.section	.gnu.lto_.profile.fe729af2,"",%progbits
+  14              		.section	.gnu.lto_.profile.1afe018,"",%progbits
   15 0000 789C6365 		.ascii	"x\234ce`b`a```d\220\342\001\000\000\300\0003"
   15      60626061 
   15      60606064 
   15      90E20100 
   15      00C00033 
   16              		.text
-  17              		.section	.gnu.lto_.icf.fe729af2,"",%progbits
+  17              		.section	.gnu.lto_.icf.1afe018,"",%progbits
   18 0000 789C6365 		.ascii	"x\234ce`bP`@\000V\206\205??\354\345a|\177c\371J\026"
   18      60625060 
   18      40005686 
@@ -35,7 +35,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   20 002a F0320000 		.ascii	"\3602\000\000\0217\020\034"
   20      1137101C 
   21              		.text
-  22              		.section	.gnu.lto_.jmpfuncs.fe729af2,"",%progbits
+  22              		.section	.gnu.lto_.jmpfuncs.1afe018,"",%progbits
   23 0000 789C6365 		.ascii	"x\234ce`b\020c@\000V\020\301\010\004\365L\014\014\314"
   23      60621063 
   23      40005610 
@@ -45,7 +45,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   24      00000E0A 
   24      0131
   25              		.text
-  26              		.section	.gnu.lto_.inline.fe729af2,"",%progbits
+  26              		.section	.gnu.lto_.inline.1afe018,"",%progbits
   27 0000 789C6365 		.ascii	"x\234ce`b\310g@\000V\006\006\026\036F\240 \003\003\333"
   27      6062C867 
   27      40005606 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   29 0024 18191898 		.ascii	"\030\031\030\230\330>\350\301%\231\030X\230\201\312"
   29      D83EE8C1 
   29      25991858 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 2
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 2
 
 
   29      9881CA
@@ -69,7 +69,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   30      00CA
   31 0045 39089E   		.ascii	"9\010\236"
   32              		.text
-  33              		.section	.gnu.lto_.pureconst.fe729af2,"",%progbits
+  33              		.section	.gnu.lto_.pureconst.1afe018,"",%progbits
   34 0000 789C6365 		.ascii	"x\234ce`b\340f```e\220`\224b\222b\226b\221\002\000\004"
   34      6062E066 
   34      60606065 
@@ -77,7 +77,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   34      92629662 
   35 0018 1000A2   		.ascii	"\020\000\242"
   36              		.text
-  37              		.section	.gnu.lto_stInit.fe729af2,"",%progbits
+  37              		.section	.gnu.lto_stInit.1afe018,"",%progbits
   38 0000 789C254D 		.ascii	"x\234%M\261\016\001A\024|\263\313\271DT\242\020_p\315"
   38      B10E0141 
   38      147CB3CB 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   45      A0DFC68D 
   45      2566921B 
   46 009f B081A698 		.ascii	"\260\201\246\230\263\017\364\347Y\361\227\263\210\330"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 3
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 3
 
 
   46      B30FF4E7 
@@ -132,7 +132,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   48 00bf A02FE30F 		.ascii	"\240/\343\017=\207"
   48      3D87
   49              		.text
-  50              		.section	.gnu.lto_stStartAlarm.fe729af2,"",%progbits
+  50              		.section	.gnu.lto_stStartAlarm.1afe018,"",%progbits
   51 0000 789C9D52 		.ascii	"x\234\235RMkSA\024\2353\223\276\027\342G\005E\004\203"
   51      4D6B5341 
   51      149D3393 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   59      003885
   60 00a3 734BCFB3 		.ascii	"sK\317\263\353T\310\261\211\302\037\205\311\267\255"
   60      EB54C8B1 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 4
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 4
 
 
   60      89C21F85 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   71      5919A31F 
   71      85
   72 017b 17B5AFA6 		.ascii	"\027\265\257\246U\224\203\375r\364\264-L\334\204\215"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 5
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 5
 
 
   72      559483FD 
@@ -290,7 +290,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   82      FD049DA9 
   82      FF44
   83              		.text
-  84              		.section	.gnu.lto_stStopAlarm.fe729af2,"",%progbits
+  84              		.section	.gnu.lto_stStopAlarm.1afe018,"",%progbits
   85 0000 789C4D50 		.ascii	"x\234MP\277KBQ\024>\337\275\366\224\240\251\245\310"
   85      BF4B4251 
   85      143EDFBD 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   85      A5C8
   86 0012 ADC9E55D 		.ascii	"\255\311\345]\252?\240%\202@\247\334#lp\020\014\237"
   86      AA3FA025 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 6
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 6
 
 
   86      8240A7DC 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
   98 00ec 55753B93 		.ascii	"Uu;\223\266\273\347/\223\257<%Q\207\203}^\3205A\003"
   98      B6BBE72F 
   98      93AF3C25 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 7
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 7
 
 
   98      5187837D 
@@ -385,7 +385,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  103 0144 FD0056C0 		.ascii	"\375\000V\300y\272"
  103      79BA
  104              		.text
- 105              		.section	.gnu.lto_stSetAlarm.fe729af2,"",%progbits
+ 105              		.section	.gnu.lto_stSetAlarm.1afe018,"",%progbits
  106 0000 789C5592 		.ascii	"x\234U\222\317k\023Q\020\307\347\273\223\354\206\250"
  106      CF6B1351 
  106      10C7E7BB 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  112      A00F2A02 
  112      1A36308C 
  112      CB5C6234 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 8
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 8
 
 
  112      F31F1F
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  124      B9E3D22C 
  124      FE78315B 
  124      3AA47322 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 9
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 9
 
 
  125 0153 355F5B7A 		.ascii	"5_[zT\341\240\256U][\211vB\355\035\222Ty\356\373\263"
@@ -526,7 +526,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  133      26733231 
  134 01fb E9C1BE   		.ascii	"\351\301\276"
  135              		.text
- 136              		.section	.gnu.lto_stGetAlarm.fe729af2,"",%progbits
+ 136              		.section	.gnu.lto_stGetAlarm.1afe018,"",%progbits
  137 0000 789C4D90 		.ascii	"x\234M\220\277K[Q\024\307\317\367\235\344\275\327J\251"
  137      BF4B5B51 
  137      14C7CFF7 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  138      04E36276 
  138      111D
  139 0024 1C029644 		.ascii	"\034\002\226D\\\275\011\261\242B-\205\232\206\022\236"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 10
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 10
 
 
  139      5CBD09B1 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  151 00f8 B9E79800 		.ascii	"\271\347\230\000\301\036\266[\355\234=\274-\215L@Z\305"
  151      C11EB65B 
  151      ED9C3DBC 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 11
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 11
 
 
  151      2D8D4C40 
@@ -642,7 +642,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  159      866E00
  160 0194 261E956E 		.ascii	"&\036\225n"
  161              		.text
- 162              		.section	.gnu.lto_.symbol_nodes.fe729af2,"",%progbits
+ 162              		.section	.gnu.lto_.symbol_nodes.1afe018,"",%progbits
  163 0000 789C55C8 		.ascii	"x\234U\310\271\015\200@\014\005\321\371^\266/(\212\330"
  163      B90D8040 
  163      0C05D1F9 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  165      972BCB21 
  165      B72CA7BC 
  165      64B9E45D 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 12
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 12
 
 
  166 003c DDF2FA0B 		.ascii	"\335\362\372\013\264\326C\2412?\257\370\0001:\036\205"
@@ -667,13 +667,13 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  166      00313A1E 
  166      85
  167              		.text
- 168              		.section	.gnu.lto_.refs.fe729af2,"",%progbits
+ 168              		.section	.gnu.lto_.refs.1afe018,"",%progbits
  169 0000 789C6365 		.ascii	"x\234ce`b`d\000\002\000\000I\000\011"
  169      60626064 
  169      00020000 
  169      490009
  170              		.text
- 171              		.section	.gnu.lto_.decls.fe729af2,"",%progbits
+ 171              		.section	.gnu.lto_.decls.1afe018,"",%progbits
  172 0000 789CB557 		.ascii	"x\234\265WkPU\327\025>\373\354\013\302\345\241\271Z"
  172      6B5055D7 
  172      153EFBEC 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  180      1139872D 
  180      9B7F
  181 00a5 818D23B7 		.ascii	"\201\215#\267\201P\2049 \247@<@~\006cs@nA\273S`\334"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 13
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 13
 
 
  181      81508439 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  192      82DA
  193 017f 31DA7AC8 		.ascii	"1\332z\310\011\3249z4\013\324\211\315\227\317\350\347"
  193      09D4397A 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 14
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 14
 
 
  193      340BD489 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  204      827F36C3 
  204      28B71106 
  204      38D979A2 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 15
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 15
 
 
  204      E7D5
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  215      33BF6965 
  215      3B76BA10 
  216 033b C5DEF7D2 		.ascii	"\305\336\367\322\212\007\245x=\335Q\250Qaj$L\244\321"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 16
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 16
 
 
  216      8A07A578 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  227      2E21FE5E 
  227      882FD8D1 
  228 041d F5F164AD 		.ascii	"\365\361d\255\374'\254`\321\332\372\262\315\016g\263"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 17
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 17
 
 
  228      FC27AC60 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  239      DCC29491 
  239      B8
  240 04ed 5BFD3C3F 		.ascii	"[\375<?\363@M>\177\337\003_dC?67x\340\313\254\335T\236"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 18
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 18
 
 
  240      F3404D3E 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  251      A26F444F 
  251      B4597447 
  251      12483CC8 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 19
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 19
 
 
  252 05de 89207120 		.ascii	"\211 q \333@\266\200|\015\262\035d\007\310V\220$\220"
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  263      C7A3B617 
  263      9E9AFC
  264 06b0 450423BF 		.ascii	"E\004#\277\005\34478\\~\275\363\00228\271 \264^\311"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 20
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 20
 
 
  264      05E43738 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  275      7AF4AD88 
  275      E5CFEE54 
  275      09E8
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 21
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 21
 
 
  276 078f 47BF24DD 		.ascii	"G\277$\335\354\2566\232)\341y\002\362\243g\025J\203"
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  287      7052DDFC 
  287      E7F09BFF 
  287      EBD1F6
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 22
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 22
 
 
  288 0862 D7FC4AA8 		.ascii	"\327\374J\250\007\365TLq\237\335\264\253\246H^5\307"
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  299      404B5454 
  299      B839F0F3 
  299      C84D6EB4 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 23
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 23
 
 
  300 093f 0668B7D0 		.ascii	"\006h\267\320\210u\241!!\241!\201\376^~n\276\213}~\367"
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  311 0a0b 654D000E 		.ascii	"eM\000\016\370d\255. `\205\221r\370\322_\037\274b\245"
  311      F864AD2E 
  311      20608591 
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 24
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 24
 
 
  311      72F8D25F 
@@ -1410,7 +1410,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  317 0a77 FF064B78 		.ascii	"\377\006KxFr"
  317      4672
  318              		.text
- 319              		.section	.gnu.lto_.symtab.fe729af2,"",%progbits
+ 319              		.section	.gnu.lto_.symtab.1afe018,"",%progbits
  320 0000 7374496E 		.ascii	"stInit\000"
  320      697400
  321 0007 00       		.ascii	"\000"
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  336 0041 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
  336      00000000 
  337 0049 BF000000 		.ascii	"\277\000\000\000"
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 25
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 25
 
 
  338 004d 73745365 		.ascii	"stSetAlarm\000"
@@ -1498,14 +1498,14 @@ ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 1
  363 00ff 2720272D 		.ascii	"' '-flto'\000"
  363      666C746F 
  363      2700
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 26
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 26
 
 
  364              		.text
  365              		.comm	__gnu_lto_v1,1,1
  366              		.comm	__gnu_lto_slim,1,1
  367              		.ident	"GCC: (GNU Tools for ARM Embedded Processors 6-2017-q1-update) 6.3.1 20170215 (release) [AR
-ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccYpcI8Y.s 			page 27
+ARM GAS  C:\Users\ALEX'S~1\AppData\Local\Temp\ccjQZNak.s 			page 27
 
 
 DEFINED SYMBOLS

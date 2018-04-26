@@ -27,6 +27,8 @@
 #define BOARD_ST_NUCLEO_F103RB
 #define BOARD_NAME              "STMicroelectronics NUCLEO-F103RB"
 
+#define NUCLEO_HSE_CRYSTAL
+
 /*
  * Board frequencies.
  */
@@ -56,7 +58,7 @@
 #define GPIOA_USART_TX          2
 #define GPIOA_USART_RX          3
 #define GPIOA_PA4               4
-#define GPIOA_LED_GREEN         5
+#define GPIOA_PA5               5
 #define GPIOA_PA6               6
 #define GPIOA_PA7               7
 #define GPIOA_PA8               8
@@ -98,7 +100,7 @@
 #define GPIOC_PC10              10
 #define GPIOC_PC11              11
 #define GPIOC_PC12              12
-#define GPIOC_BUTTON            13
+#define GPIOC_LED               13
 #define GPIOC_PC14              14
 #define GPIOC_PC15              15
 

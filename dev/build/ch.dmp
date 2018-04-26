@@ -7,11 +7,11 @@ start address 0x08000161
 
 Program Header:
     LOAD off    0x00010000 vaddr 0x08000000 paddr 0x08000000 align 2**16
-         filesz 0x00001890 memsz 0x00001890 flags rwx
-    LOAD off    0x00020800 vaddr 0x20000800 paddr 0x08001890 align 2**16
+         filesz 0x00001880 memsz 0x00001880 flags rwx
+    LOAD off    0x00020800 vaddr 0x20000800 paddr 0x08001880 align 2**16
          filesz 0x00000034 memsz 0x00000034 flags rw-
-    LOAD off    0x00020838 vaddr 0x20000838 paddr 0x080018c4 align 2**16
-         filesz 0x00000000 memsz 0x00000690 flags rw-
+    LOAD off    0x00020838 vaddr 0x20000838 paddr 0x080018b4 align 2**16
+         filesz 0x00000000 memsz 0x00000688 flags rw-
     LOAD off    0x00030000 vaddr 0x20000000 paddr 0x20000000 align 2**16
          filesz 0x00000000 memsz 0x00005000 flags rw-
 private flags = 5000200: [Version5 EABI] [soft-float ABI]
@@ -20,21 +20,21 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 startup       00000160  08000000  08000000  00010000  2**7
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00001730  08000160  08000160  00010160  2**4
+  1 .text         00001720  08000160  08000160  00010160  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .textalign    00000000  08001890  08001890  00020834  2**0
+  2 .textalign    00000000  08001880  08001880  00020834  2**0
                   CONTENTS
   3 .mstack       00000400  20000000  20000000  00030000  2**0
                   ALLOC
   4 .pstack       00000400  20000400  20000400  00030000  2**0
                   ALLOC
-  5 .data         00000034  20000800  08001890  00020800  2**2
+  5 .data         00000034  20000800  08001880  00020800  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .bss          00000690  20000838  080018c4  00020838  2**3
+  6 .bss          00000688  20000838  080018b4  00020838  2**3
                   ALLOC
-  7 .ram0_init    00000000  20000ec8  20000ec8  00020834  2**2
+  7 .ram0_init    00000000  20000ec0  20000ec0  00020834  2**2
                   CONTENTS
-  8 .ram0         00000000  20000ec8  20000ec8  00020834  2**2
+  8 .ram0         00000000  20000ec0  20000ec0  00020834  2**2
                   CONTENTS
   9 .ram1_init    00000000  00000000  00000000  00020834  2**2
                   CONTENTS
@@ -64,38 +64,38 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
  22 .ram7         00000000  00000000  00000000  00020834  2**2
                   CONTENTS
- 23 .heap         00004138  20000ec8  20000ec8  00030000  2**0
+ 23 .heap         00004140  20000ec0  20000ec0  00030000  2**0
                   ALLOC
  24 .ARM.attributes 0000002f  00000000  00000000  00020834  2**0
                   CONTENTS, READONLY
  25 .comment      0000007f  00000000  00000000  00020863  2**0
                   CONTENTS, READONLY
- 26 .debug_info   000058b8  00000000  00000000  000208e2  2**0
+ 26 .debug_info   000058a4  00000000  00000000  000208e2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 27 .debug_abbrev 000006d1  00000000  00000000  0002619a  2**0
+ 27 .debug_abbrev 000006d1  00000000  00000000  00026186  2**0
                   CONTENTS, READONLY, DEBUGGING
- 28 .debug_loc    00002323  00000000  00000000  0002686b  2**0
+ 28 .debug_loc    00002369  00000000  00000000  00026857  2**0
                   CONTENTS, READONLY, DEBUGGING
- 29 .debug_aranges 00000180  00000000  00000000  00028b8e  2**0
+ 29 .debug_aranges 00000180  00000000  00000000  00028bc0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 30 .debug_ranges 00000fa8  00000000  00000000  00028d0e  2**0
+ 30 .debug_ranges 00000fa0  00000000  00000000  00028d40  2**0
                   CONTENTS, READONLY, DEBUGGING
- 31 .debug_line   00001681  00000000  00000000  00029cb6  2**0
+ 31 .debug_line   00001670  00000000  00000000  00029ce0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 32 .debug_str    000015bb  00000000  00000000  0002b337  2**0
+ 32 .debug_str    000015cd  00000000  00000000  0002b350  2**0
                   CONTENTS, READONLY, DEBUGGING
- 33 .debug_frame  00000550  00000000  00000000  0002c8f4  2**2
+ 33 .debug_frame  00000550  00000000  00000000  0002c920  2**2
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 08000000 l    d  startup	00000000 startup
 08000160 l    d  .text	00000000 .text
-08001890 l    d  .textalign	00000000 .textalign
+08001880 l    d  .textalign	00000000 .textalign
 20000000 l    d  .mstack	00000000 .mstack
 20000400 l    d  .pstack	00000000 .pstack
 20000800 l    d  .data	00000000 .data
 20000838 l    d  .bss	00000000 .bss
-20000ec8 l    d  .ram0_init	00000000 .ram0_init
-20000ec8 l    d  .ram0	00000000 .ram0
+20000ec0 l    d  .ram0_init	00000000 .ram0_init
+20000ec0 l    d  .ram0	00000000 .ram0
 00000000 l    d  .ram1_init	00000000 .ram1_init
 00000000 l    d  .ram1	00000000 .ram1
 00000000 l    d  .ram2_init	00000000 .ram2_init
@@ -110,7 +110,7 @@ SYMBOL TABLE:
 00000000 l    d  .ram6	00000000 .ram6
 00000000 l    d  .ram7_init	00000000 .ram7_init
 00000000 l    d  .ram7	00000000 .ram7
-20000ec8 l    d  .heap	00000000 .heap
+20000ec0 l    d  .heap	00000000 .heap
 00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_info	00000000 .debug_info
@@ -251,22 +251,20 @@ SYMBOL TABLE:
 20000cf0 l     O .bss	00000020 default_heap
 20000d10 l     O .bss	00000004 endmem
 20000d14 l     O .bss	00000001 foundheader
-20000d15 l     O .bss	00000001 i.6609
-20000d16 l     O .bss	00000001 i.6613
-20000d17 l     O .bss	00000001 i.6615
+20000d15 l     O .bss	00000001 i.6613
+20000d16 l     O .bss	00000001 i.6615
 20000d18 l     O .bss	00000028 motorPins
 20000d40 l     O .bss	0000000a motorPwrCommand
 20000d4a l     O .bss	00000001 negative.6610
 20000d4c l     O .bss	00000004 nextmem
 20000d50 l     O .bss	00000004 pending_flags.6626
-20000d54 l     O .bss	00000004 pins
-20000d58 l     O .bss	00000002 power.6611
-20000d5c l     O .bss	00000020 sdrxbuf
-20000d80 l     O .bss	00000148 waThread1
+20000d54 l     O .bss	00000002 power.6611
+20000d58 l     O .bss	00000020 sdrxbuf
+20000d78 l     O .bss	00000148 waThread1
 20000800 l     O .data	00000034 pwmcfg
-080017c0 l     O .text	00000016 ch_debug
-080017f0 l     O .text	00000080 ram_areas
-08001870 l     O .text	00000020 vmt
+080017b0 l     O .text	00000016 ch_debug
+080017e0 l     O .text	00000080 ram_areas
+08001860 l     O .text	00000020 vmt
 00000000 l    df *ABS*	00000000 build/obj/crt0_v7m.o
 08000182 l       .text	00000000 msloop
 08000190 l       .text	00000000 psloop
@@ -281,17 +279,17 @@ SYMBOL TABLE:
 e000ed04 l       *ABS*	00000000 SCB_ICSR
 10000000 l       *ABS*	00000000 ICSR_PENDSVSET
 00000000 l    df *ABS*	00000000 memset.c
-080015f0 g     F .text	00000048 chThdExit
+080015e0 g     F .text	00000048 chThdExit
 00000000 g       startup	00000000 __ram4_start__
 00000000 g       .ram5	00000000 __ram5_clear__
-20000ec8 g       .ram0_init	00000000 __ram0_init__
+20000ec0 g       .ram0_init	00000000 __ram0_init__
 00000000 g       .ram1	00000000 __ram1_free__
 00000000 g       startup	00000000 __ram6_start__
 08000000 g     O startup	00000160 _vectors
-08001890 g       .text	00000000 __exidx_end
-20000ec8 g       .ram0	00000000 __ram0_free__
-20000ec8 g       .heap	00000000 __heap_base__
-080018c4 g       *ABS*	00000000 __ram3_init_text__
+08001880 g       .text	00000000 __exidx_end
+20000ec0 g       .ram0	00000000 __ram0_free__
+20000ec0 g       .heap	00000000 __heap_base__
+080018b4 g       *ABS*	00000000 __ram3_init_text__
 00000000 g       *ABS*	00000000 __ram5_end__
 00000000 g       .ram5	00000000 __ram5_noinit__
 00000000 g       *ABS*	00000000 __ram5_size__
@@ -305,21 +303,21 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00000000 g       *ABS*	00000000 __ram4_size__
 00000000 g       *ABS*	00000000 __ram1_end__
 00000000 g       *ABS*	00000000 __ram4_end__
-08001890 g       .text	00000000 __exidx_start
-080018c4 g       *ABS*	00000000 __ram0_init_text__
-080018c4 g       *ABS*	00000000 __ram1_init_text__
+08001880 g       .text	00000000 __exidx_start
+080018b4 g       *ABS*	00000000 __ram0_init_text__
+080018b4 g       *ABS*	00000000 __ram1_init_text__
 00005000 g       *ABS*	00000000 __ram0_size__
-080018c4 g       *ABS*	00000000 __ram5_init_text__
-20000ec8 g       .bss	00000000 _bss_end
+080018b4 g       *ABS*	00000000 __ram5_init_text__
+20000ec0 g       .bss	00000000 _bss_end
 08000160 g     F .text	00000000 Reset_Handler
 00000000 g       .ram4	00000000 __ram4_clear__
 00000000 g       .ram5	00000000 __ram5_free__
-080018c4 g       *ABS*	00000000 __ram6_init_text__
+080018b4 g       *ABS*	00000000 __ram6_init_text__
 00000000 g       .ram3	00000000 __ram3_clear__
-080016e0 g     F .text	00000002 __default_exit
+080016d0 g     F .text	00000002 __default_exit
 00000000 g       *ABS*	00000000 __ram6_end__
 00000000 g       .ram6_init	00000000 __ram6_init__
-08001640 g     F .text	0000003c chSchDoReschedule
+08001630 g     F .text	0000003c chSchDoReschedule
 00000000 g       .ram7_init	00000000 __ram7_init__
 00000000 g       .ram6	00000000 __ram6_free__
 00000000 g       .ram2	00000000 __ram2_noinit__
@@ -329,9 +327,9 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 20000800 g       .data	00000000 _data_start
 00000000 g       *ABS*	00000000 __ram7_size__
 08000230 g     F .text	00000000 _port_switch
-08001700 g     F .text	00000002 __core_init
+080016f0 g     F .text	00000002 __core_init
 00000000 g       .ram4	00000000 __ram4_noinit__
-080016f0 g     F .text	00000002 __late_init
+080016e0 g     F .text	00000002 __late_init
 00000000 g       startup	00000000 __ram7_start__
 00000000 g       .ram6	00000000 __ram6_clear__
 20000834 g       .data	00000000 _data_end
@@ -342,35 +340,35 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00000000 g       *ABS*	00000000 __ram3_end__
 00000000 g       *ABS*	00000000 __ram2_size__
 00000000 g       startup	00000000 __ram1_start__
-08001710 g     F .text	0000009a memset
-08001100 g     F .text	00000478 main
+08001700 g     F .text	0000009a memset
+08001100 g     F .text	00000444 main
 00000000 g       *ABS*	00000000 __ram6_size__
-080018c4 g       *ABS*	00000000 __ram2_init_text__
+080018b4 g       *ABS*	00000000 __ram2_init_text__
 00000000 g       .ram3	00000000 __ram3_free__
 08000160 g       startup	00000000 __init_array_end
-080018c4 g       *ABS*	00000000 __ram4_init_text__
+080018b4 g       *ABS*	00000000 __ram4_init_text__
 00000000 g       .ram1	00000000 __ram1_noinit__
 08000240 g     F .text	00000000 _port_thread_start
 00000000 g       .ram2_init	00000000 __ram2_init__
 00000000 g       *ABS*	00000000 __ram2_end__
 20000400 g       .pstack	00000000 __process_stack_base__
-20000ec8 g       .ram0	00000000 __ram0_clear__
+20000ec0 g       .ram0	00000000 __ram0_clear__
 00000000 g       .ram3	00000000 __ram3_noinit__
-20000ec8 g       .ram0	00000000 __ram0_noinit__
-08001680 g     F .text	00000060 __init_ram_areas
+20000ec0 g       .ram0	00000000 __ram0_noinit__
+08001670 g     F .text	00000060 __init_ram_areas
 00000000 g       startup	00000000 __ram2_start__
 08000250 g     F .text	00000000 _port_switch_from_isr
 00000000 g       *ABS*	00000000 __ram7_end__
 20000400 g       .mstack	00000000 __main_stack_end__
 00000000 g       .ram5_init	00000000 __ram5_init__
 20000400 g       .pstack	00000000 __main_thread_stack_base__
-080018c4 g       *ABS*	00000000 __ram7_init_text__
+080018b4 g       *ABS*	00000000 __ram7_init_text__
 00000000 g       .ram3_init	00000000 __ram3_init__
 20000000 g       startup	00000000 __ram0_start__
 08000254 g       .text	00000000 _port_exit_from_isr
 00000000 g       .ram1_init	00000000 __ram1_init__
 08000160 g       startup	00000000 __init_array_start
-08001890 g       *ABS*	00000000 _textdata_start
+08001880 g       *ABS*	00000000 _textdata_start
 00000000 g       startup	00000000 __ram5_start__
 00000000 g       .ram2	00000000 __ram2_free__
 00000000 g       .ram4	00000000 __ram4_free__
@@ -379,7 +377,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00000400 g       *ABS*	00000000 __main_stack_size__
 00000000 g       .ram7	00000000 __ram7_noinit__
 20000800 g       .pstack	00000000 __process_stack_end__
-08001580 g     F .text	0000006c __early_init
+08001550 g     F .text	00000084 __early_init
 00000000 g       startup	00000000 __ram3_start__
 00000400 g       *ABS*	00000000 __process_stack_size__
 
