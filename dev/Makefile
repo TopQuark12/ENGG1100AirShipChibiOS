@@ -113,7 +113,7 @@ CSRC = $(STARTUPSRC) \
        $(PLATFORMSRC) \
        $(BOARDSRC) \
        $(TESTSRC) \
-       main.c MotorPWM.c Bluetooth.c
+       main.c MotorPWM.c Bluetooth.c Tof.c imu.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

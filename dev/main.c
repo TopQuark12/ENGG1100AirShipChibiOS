@@ -18,6 +18,8 @@
 #include "hal.h"
 #include "MotorPWM.h"
 #include "Bluetooth.h"
+#include "Tof.h"
+#include "imu.h"
 
 /*
  * Red LED blinker thread, times are in milliseconds.
@@ -29,9 +31,9 @@ static THD_FUNCTION(Thread1, arg) {
   chRegSetThreadName("blinker");
   while (true) {
     palClearPad(GPIOC, GPIOC_LED);
-    chThdSleepMilliseconds(50);
+    chThdSleepMilliseconds(10);
     palSetPad(GPIOC, GPIOC_LED);
-    chThdSleepMilliseconds(50);
+    chThdSleepMilliseconds(10);
   }
 }
 
@@ -47,6 +49,10 @@ int main(void) {
 
   motorpwmInit();
 
+  imuInit();
+
+  tofInit();
+
   pins = getPins();
   static uint8_t i = 0;
 
@@ -54,9 +60,9 @@ int main(void) {
 
   while (true) {
 
-//    for (i = 0; i < MOTORNUM; i++) {
-//      pins[i].dutycycle = pins[i].dutycycle >= 10000 ? 0 : pins[i].dutycycle + 200;
-//    }
+    for (i = 0; i < MOTORNUM; i++) {
+      pins[i].dutycycle = pins[i].dutycycle >= 10000 ? 0 : pins[i].dutycycle + 200;
+    }
 
     chThdSleepMilliseconds(20);
 

@@ -1,5 +1,5 @@
 /*
- * Bluetooth.c
+ * Tof.c
  *
  *  Created on: 26 Apr 2018
  *      Author: Alex's Desktop
@@ -7,8 +7,7 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "MotorPWM.h"
-#include "Bluetooth.h"
+#include "Tof.h"
 
 #define FLUSH_I_QUEUE(sdp)      \
     chSysLock();                \
@@ -17,69 +16,51 @@
 
 #define LEAST_SET_BIT(x)        x&(-x)      //Clear all but least set bit
 
-#define ACQTIME                 15           //Milliseconds
+#define ACQTIME                 1           //Milliseconds
 
 #define SERIAL_EVT_MASK         1
 
-static int16_t motorPwrCommand[MOTORNUM];
+static uint16_t distance = 0;
 
 static uint8_t foundheader = 0;
 static uint8_t datalength = 0;
 static uint8_t sdrxbuf[SERIAL_BUFFERS_SIZE];
 
 static const SerialConfig SerialCfg = {
-  9600,                 //Baud Rate
+  115200,               //Baud Rate
   USART_CR1_UE,         //CR1 Register
   USART_CR2_LINEN,      //CR2 Register
   0                     //CR3 Register
 };
 
-void bluetoothdecode(void) {
+void tofdecode(void) {
 
-  static bool negative;
-  static int16_t power;
-  static uint8_t motornum;
+  static int16_t temp_dis;
   static uint8_t i;
-
   i = 0;
   while(i < datalength) {                                                   //Scan for frame head
-    if ((sdrxbuf[i] == FRAMEHEAD) &&                                  //Verify first byte value
-        (sdrxbuf[i + 2] == FRAMEINDEXER)) {
-
-      power = 0;
-      negative = 0;
+    if ((sdrxbuf[i] == TOFFRAMEHEAD)) {
+      temp_dis = 0;
       i++;
-      motornum = sdrxbuf[i] - 48;
-      i++;
-      i++;
-      while((sdrxbuf[i] != FRAMEEND) && (i < datalength)) {
-        if (sdrxbuf[i] == NEGATIVECHAR) {
-          negative = true;
-        }
-        else {
-          power = power * 10 + (sdrxbuf[i] - 48);
-        }
+      while((sdrxbuf[i] != TOFFRAMEEND) && (i < datalength)) {
+        temp_dis = temp_dis * 10 + (sdrxbuf[i] - 48);
         i++;
       }
-      power = negative ? -power : power;
-      motorPwrCommand[motornum] = power;
+      distance = temp_dis;
     } else {
-
-        i++;
-
+      i++;
     }
   }
-
-  i = 0;
-
 }
 
-static THD_WORKING_AREA(BluetoothThd_wa, 128);
-static THD_FUNCTION(BluetoothThd, arg) {
+static THD_WORKING_AREA(TofThd_wa, 128);
+static THD_FUNCTION(TofThd, arg) {
 
   (void)arg;
 
   memset((void*) sdrxbuf, 0, SERIAL_BUFFERS_SIZE);
+
+  memset((void*) distance, 0, sizeof(distance));
 
   static const eventflags_t serial_wkup_flags =                     //Partially from SD driver
     CHN_INPUT_AVAILABLE | CHN_DISCONNECTED | SD_NOISE_ERROR |       //Partially inherited from IO queue driver
@@ -89,7 +70,7 @@ static THD_FUNCTION(BluetoothThd, arg) {
   event_listener_t serial_listener;
   static eventflags_t pending_flags;
   static eventflags_t current_flag;
-  chEvtRegisterMaskWithFlags(chnGetEventSource(BLUETOOTHDRIVER), &serial_listener,
+  chEvtRegisterMaskWithFlags(chnGetEventSource(TOFDRIVER), &serial_listener,
                              SERIAL_EVT_MASK, serial_wkup_flags);   //setup event listening
 
   while (!chThdShouldTerminateX()) {
@@ -110,36 +91,36 @@ static THD_FUNCTION(BluetoothThd, arg) {
             case CHN_INPUT_AVAILABLE:                                     //Serial data available
                 chThdSleep(MS2ST(ACQTIME));                            //Acquire data packet, release CPU
                 if((!pending_flags)) {
-                    datalength = sdAsynchronousRead(BLUETOOTHDRIVER, &sdrxbuf,
+                    datalength = sdAsynchronousRead(TOFDRIVER, &sdrxbuf,
                                                    (size_t)SERIAL_BUFFERS_SIZE);  //Non-blocking data read
-                    bluetoothdecode();
+                    tofdecode();
                 }
 
-                FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+                FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             case CHN_DISCONNECTED:
-            FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+            FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             case SD_NOISE_ERROR:
-            FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+            FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             case SD_PARITY_ERROR:
-            FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+            FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             case SD_FRAMING_ERROR:
-            FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+            FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             case SD_OVERRUN_ERROR:
-            FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+            FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             case SD_BREAK_DETECTED:
-            FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+            FLUSH_I_QUEUE(TOFDRIVER);
                 break;
 
             default:
@@ -149,20 +130,20 @@ static THD_FUNCTION(BluetoothThd, arg) {
 
     } while (pending_flags && !foundheader);
 
-    FLUSH_I_QUEUE(BLUETOOTHDRIVER);
+    FLUSH_I_QUEUE(TOFDRIVER);
     memset((void*)sdrxbuf, 0, SERIAL_BUFFERS_SIZE);               //Flush RX buffer
 
   }
 
 }
 
-void bluetoothInit(void) {
+void tofInit(void) {
 
-  sdStart(BLUETOOTHDRIVER, &SerialCfg);
+  sdStart(TOFDRIVER, &SerialCfg);
 
-  memset((void*) motorPwrCommand, 0, sizeof(motorPwrCommand));
+  distance = 0;
 
-  chThdCreateStatic(BluetoothThd_wa, sizeof(BluetoothThd_wa),
-                    NORMALPRIO + 5, BluetoothThd, NULL);
+  chThdCreateStatic(TofThd_wa, sizeof(TofThd_wa),
+                    NORMALPRIO + 3, TofThd, NULL);
 
 }

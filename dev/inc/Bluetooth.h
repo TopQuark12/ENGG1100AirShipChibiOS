@@ -8,6 +8,8 @@
 #ifndef INC_BLUETOOTH_H_
 #define INC_BLUETOOTH_H_
 
+#define BLUETOOTHDRIVER     &SD2
+
 #define FRAMEHEAD           64
 #define FRAMEINDEXER        58
 #define FRAMEEND            38

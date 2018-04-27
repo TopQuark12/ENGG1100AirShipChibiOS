@@ -142,7 +142,7 @@
  * PA14 - Pull-down input           (GPIOA_SWCLK).
  */
 #define VAL_GPIOACRL            0xBB384B88      /*  PA7...PA0 */
-#define VAL_GPIOACRH            0x8888BBBB      /* PA15...PA8 */
+#define VAL_GPIOACRH            0x8888B4BB      /* PA15...PA8 */
 #define VAL_GPIOAODR            0xFFFFBFDF
 
 /*
@@ -150,8 +150,8 @@
  * Everything input with pull-up except:
  * PB3  - Pull-up input             (GPIOA_SWO).
  */
-#define VAL_GPIOBCRL            0x88888888      /*  PB7...PB0 */
-#define VAL_GPIOBCRH            0x88888888      /* PB15...PB8 */
+#define VAL_GPIOBCRL            0x4B8888BB      /*  PB7...PB0 */
+#define VAL_GPIOBCRH            0x88884B88      /* PB15...PB8 */
 #define VAL_GPIOBODR            0xFFFFFFFF
 
 /*
