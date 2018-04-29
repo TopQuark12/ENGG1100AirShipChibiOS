@@ -1,9 +1,8 @@
 # ENGG1100AirShipChibiOS
-Code for ENGG1100 AirShip programmed with Chibios for the BluePill Board. Everything is open-source, fell free to build
-upon my work.  
+Code written by Alex Wong Tat Hang for HKUST ENGG1100 AirShip project. Programmed with Chibios for the STM32F103 BluePill Board. Everything is open-source, fell free to build upon my work.  
 
 This code is built upon the STM32F103 NUCLEO board example code, with heavy modifications on the hardware level, e.g. clock
-settings, GPIO, Serial driver etc. The code is now configured to run on the common and cheap 'Blue Pill Board'.  
+settings, GPIO, Serial driver etc. The code is now configured to run on the common and cheap 'Blue Pill Board' at the max 72MHz.  
 
 To manage everything efficiently, the code utilises the ChibiOS Real Time Operating System Module to realise multi-threading capability.  
 
