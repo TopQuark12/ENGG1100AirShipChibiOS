@@ -12,8 +12,8 @@
 static PWMpin_t motorPins[MOTORNUM];
 
 static PWMConfig pwmcfg = {
-  10000000,                                      /* 500 kHz PWM clock frequency.   */
-  100000,                                        /* Initial PWM period 1S.       */
+  1000000,                                      /* 500 kHz PWM clock frequency.   */
+  MAXPWR,                                        /* Initial PWM period 1S.       */
   //pwmpcb,
   NULL,
   {
@@ -48,8 +48,8 @@ void motorpwmSet(PWMpin_t* pin) {
 
 }
 
-static THD_WORKING_AREA(MotorThdwa, 128);
-static THD_FUNCTION(MotorThd, arg) {
+static THD_WORKING_AREA(MotorPWMTHDwa, 128);
+static THD_FUNCTION(MotorPWMTHD, arg) {
 
   (void)arg;
 
@@ -77,8 +77,8 @@ void motorpwmInit(void) {
   pinInit(&motorPins[2], &PWMD3, 3);
   pinInit(&motorPins[3], &PWMD1, 3);
   pinInit(&motorPins[4], &PWMD3, 0);
-  pinInit(&motorPins[5], &PWMD3, 1);
+  //pinInit(&motorPins[5], &PWMD3, 1);
 
-  chThdCreateStatic(MotorThdwa, sizeof(MotorThdwa), NORMALPRIO + 10, MotorThd, NULL);
+  chThdCreateStatic(MotorPWMTHDwa, sizeof(MotorPWMTHDwa), NORMALPRIO + 10, MotorPWMTHD, NULL);
 
 }

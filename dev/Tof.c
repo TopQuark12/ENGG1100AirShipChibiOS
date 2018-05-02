@@ -8,6 +8,9 @@
 #include "ch.h"
 #include "hal.h"
 #include "Tof.h"
+#define ARM_MATH_CM3
+#include <arm_math.h>
+#include "imu.h"
 
 #define FLUSH_I_QUEUE(sdp)      \
     chSysLock();                \
@@ -21,6 +24,10 @@
 #define SERIAL_EVT_MASK         1
 
 static uint16_t distance = 0;
+
+static float32_t height = 0;
+
+static imu_t* imu_data;
 
 static uint8_t foundheader = 0;
 static uint8_t datalength = 0;
@@ -46,11 +53,16 @@ void tofdecode(void) {
         temp_dis = temp_dis * 10 + (sdrxbuf[i] - 48);
         i++;
       }
-      distance = temp_dis;
+      distance = temp_dis < 2000 ? temp_dis : distance;
     } else {
       i++;
     }
   }
+
+  height = ((float32_t)distance * arm_cos_f32(imu_data->euler.pit_deg / 360.0 * 2 * PI)) *
+           (arm_cos_f32(imu_data->euler.roll_deg / 360.0 * 2 * PI));
+           //(arm_cos_f32(imu_data->euler.yaw_deg / 360.0 * 2 * PI));
+
 }
 
 static THD_WORKING_AREA(TofThd_wa, 128);
@@ -142,6 +154,10 @@ void tofInit(void) {
   sdStart(TOFDRIVER, &SerialCfg);
 
   distance = 0;
+
+  memset((void*) &height, 0, sizeof(height));
+
+  imu_data = getIMU();
 
   chThdCreateStatic(TofThd_wa, sizeof(TofThd_wa),
                     NORMALPRIO + 3, TofThd, NULL);

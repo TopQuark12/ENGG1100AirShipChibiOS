@@ -9,6 +9,7 @@
 #define INC_MOTORPWM_H_
 
 #define MOTORNUM        5
+#define MAXPWR          10000
 
 typedef struct PWMpin_t{
 

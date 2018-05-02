@@ -15,6 +15,8 @@
 #define FRAMEEND            38
 #define NEGATIVECHAR        45
 
+int16_t* getBluetoothCommand(void);
+
 void bluetoothInit(void);
 
 #endif /* INC_BLUETOOTH_H_ */

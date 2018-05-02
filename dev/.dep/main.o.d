@@ -47,7 +47,8 @@ build/obj/main.o: main.c ../os/rt/include/ch.h \
  ../os/hal/include/hal_queues.h ../os/hal/include/pal.h \
  ../os/hal/ports/STM32/LLD/GPIOv1/pal_lld.h ../os/hal/include/adc.h \
  ../os/hal/include/can.h ../os/hal/include/dac.h ../os/hal/include/ext.h \
- ../os/hal/include/gpt.h ../os/hal/include/i2c.h ../os/hal/include/i2s.h \
+ ../os/hal/include/gpt.h ../os/hal/include/i2c.h \
+ ../os/hal/ports/STM32/LLD/I2Cv1/i2c_lld.h ../os/hal/include/i2s.h \
  ../os/hal/include/icu.h ../os/hal/include/mac.h ../os/hal/include/mii.h \
  ../os/hal/include/pwm.h ../os/hal/ports/STM32/LLD/TIMv1/pwm_lld.h \
  ../os/hal/include/rtc.h ../os/hal/include/serial.h \
@@ -55,7 +56,23 @@ build/obj/main.o: main.c ../os/rt/include/ch.h \
  ../os/hal/include/spi.h ../os/hal/include/uart.h ../os/hal/include/usb.h \
  ../os/hal/include/wdg.h ../os/hal/include/st.h \
  ../os/hal/include/mmc_spi.h ../os/hal/include/serial_usb.h \
- ../dev/inc/MotorPWM.h ../dev/inc/Bluetooth.h
+ ../dev/inc/MotorPWM.h ../dev/inc/Bluetooth.h ../dev/inc/Tof.h \
+ ../os/ext/CMSIS/include/arm_math.h ../os/ext/CMSIS/include/core_cm3.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\string.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\_ansi.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\newlib.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\config.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\machine\ieeefp.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\reent.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\_ansi.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\_types.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\machine\_types.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\lock.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\cdefs.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\_locale.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\string.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\math.h \
+ ../dev/inc/imu.h ../dev/inc/Motor.h ../dev/inc/MotorPWM.h
 
 ../os/rt/include/ch.h:
 
@@ -211,6 +228,8 @@ mcuconf.h:
 
 ../os/hal/include/i2c.h:
 
+../os/hal/ports/STM32/LLD/I2Cv1/i2c_lld.h:
+
 ../os/hal/include/i2s.h:
 
 ../os/hal/include/icu.h:
@@ -248,3 +267,43 @@ mcuconf.h:
 ../dev/inc/MotorPWM.h:
 
 ../dev/inc/Bluetooth.h:
+
+../dev/inc/Tof.h:
+
+../os/ext/CMSIS/include/arm_math.h:
+
+../os/ext/CMSIS/include/core_cm3.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\string.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\_ansi.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\newlib.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\config.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\machine\ieeefp.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\reent.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\_ansi.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\_types.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\machine\_types.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\lock.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\cdefs.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\_locale.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\sys\string.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\6.3\ 2017q1\arm-none-eabi\include\math.h:
+
+../dev/inc/imu.h:
+
+../dev/inc/Motor.h:
+
+../dev/inc/MotorPWM.h:

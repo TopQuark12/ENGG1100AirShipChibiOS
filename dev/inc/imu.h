@@ -5,6 +5,9 @@
  *      Author: Alex's Desktop
  */
 
+#define ARM_MATH_CM3
+#include "arm_math.h"
+
 #ifndef INC_IMU_H_
 #define INC_IMU_H_
 
@@ -34,11 +37,11 @@
 
 typedef struct euler_t{
 
-  int16_t roll_deg;
-  int16_t pit_deg;
-  int16_t yaw_deg;
+  float32_t roll_deg;
+  float32_t pit_deg;
+  float32_t yaw_deg;
 
-}__attribute__((packed)) euler_t;
+} euler_t;
 
 typedef struct three_dimension_t{
 
@@ -66,6 +69,8 @@ typedef struct imu_t{
   quad_t quad;
 
 }__attribute__((packed)) imu_t;
+
+imu_t* getIMU(void);
 
 void imuInit(void);
 

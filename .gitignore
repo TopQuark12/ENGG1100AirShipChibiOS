@@ -53,3 +53,4 @@ cmake-build-default/
 .idea/
 *.DS_Store
 MDK-ARM/RMv3testDemo
+~$BluePill PinOut.xlsx

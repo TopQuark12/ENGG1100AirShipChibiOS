@@ -34,6 +34,12 @@ static const SerialConfig SerialCfg = {
   0                     //CR3 Register
 };
 
+int16_t* getBluetoothCommand(void) {
+
+  return &motorPwrCommand;
+
+}
+
 void bluetoothdecode(void) {
 
   static bool negative;

@@ -8,6 +8,8 @@
 #include "ch.h"
 #include "hal.h"
 #include "imu.h"
+#define ARM_MATH_CM3
+#include "arm_math.h"
 
 #define FLUSH_I_QUEUE(sdp)      \
     chSysLock();                \
@@ -24,7 +26,7 @@ static imu_t imu;
 
 static uint8_t foundheader = 0;
 static uint8_t datalength = 0;
-static uint8_t sdrxbuf[SERIAL_BUFFERS_SIZE];
+static uint8_t imusdrxbuf[SERIAL_BUFFERS_SIZE];
 static uint8_t sdtxbuf[SERIAL_BUFFERS_SIZE];
 
 static const SerialConfig SerialCfg = {
@@ -48,37 +50,48 @@ uint8_t getchecksum(uint8_t* data, uint8_t n) {
 
 }
 
+imu_t* getIMU(void) {
+
+  return &imu;
+
+}
+
 void imudecode(void) {
 
   static uint8_t i;
 
   i = 0;
-  while(i < datalength) {
+  //while(i < datalength) {
 
-    if ((sdrxbuf[i] == IMURXFRAMEHEAD) &&
-        (sdrxbuf[i + 1] == IMURXFRAMEHEAD) &&
-        (getchecksum(&sdrxbuf[i], 4 + sdrxbuf[i + 3]) == sdrxbuf[sdrxbuf[i + 3] + 4])) {
+    if ((imusdrxbuf[0] == IMURXFRAMEHEAD) &&
+        (imusdrxbuf[0 + 1] == IMURXFRAMEHEAD) &&
+        (getchecksum(&imusdrxbuf[0], 4 + imusdrxbuf[0 + 3]) == imusdrxbuf[imusdrxbuf[0 + 3] + 4])) {
 
-          switch (sdrxbuf[i + 2]) {
+        chSysLock();
+
+        switch (imusdrxbuf[0 + 2]) {
 
           case OUT_RAW_ACC:
-            memcpy(&imu.acc, &sdrxbuf[i + 3], 6);
+            memcpy(&imu.acc, &imusdrxbuf[0 + 4], 6);
             break;
 
           case OUT_RAW_GYRO:
-            memcpy(&imu.gyro, &sdrxbuf[i + 3], 6);
+            memcpy(&imu.gyro, &imusdrxbuf[0 + 4], 6);
             break;
 
           case OUT_RAW_MAG:
-            memcpy(&imu.mag, &sdrxbuf[i + 3], 6);
+            memcpy(&imu.mag, &imusdrxbuf[0 + 4], 6);
             break;
 
           case OUT_EULER:
-            memcpy(&imu.euler, &sdrxbuf[i + 3], 6);
+            //memcpy(&imu.euler, &imusdrxbuf[0 + 4], 6);
+            imu.euler.roll_deg = ((int16_t)(imusdrxbuf[0 + 4] << 8 | imusdrxbuf[0 + 5] )) / 100.0;
+            imu.euler.pit_deg = ((int16_t)(imusdrxbuf[0 + 6] << 8 | imusdrxbuf[0 + 7] )) / 100.0;
+            imu.euler.yaw_deg = ((int16_t)(imusdrxbuf[0 + 8] << 8 | imusdrxbuf[0 + 9] )) / 100.0;
             break;
 
           case OUT_QUAD:
-            memcpy(&imu.quad, &sdrxbuf[i + 3], 8);
+            memcpy(&imu.quad, &imusdrxbuf[0 + 4], 8);
             break;
 
           default:
@@ -88,13 +101,15 @@ void imudecode(void) {
 
           i += 10;
 
+          chSysUnlock();
+
         } else {
 
           i++;
 
         }
 
-  }
+  //}
 
 }
 
@@ -116,7 +131,7 @@ static THD_FUNCTION(imuThd, arg) {
 
   (void)arg;
 
-  memset((void*) sdrxbuf, 0, SERIAL_BUFFERS_SIZE);
+  memset((void*) imusdrxbuf, 0, SERIAL_BUFFERS_SIZE);
 
   static const eventflags_t serial_wkup_flags =                     //Partially from SD driver
     CHN_INPUT_AVAILABLE | CHN_DISCONNECTED | SD_NOISE_ERROR |       //Partially inherited from IO queue driver
@@ -147,7 +162,7 @@ static THD_FUNCTION(imuThd, arg) {
               case CHN_INPUT_AVAILABLE:                                     //Serial data available
                   chThdSleep(MS2ST(ACQTIME));                            //Acquire data packet, release CPU
                   if((!pending_flags)) {
-                      datalength = sdAsynchronousRead(IMUDRIVER, &sdrxbuf,
+                      datalength = sdAsynchronousRead(IMUDRIVER, &imusdrxbuf,
                                                      (size_t)SERIAL_BUFFERS_SIZE);  //Non-blocking data read
                       imudecode();
                   }
@@ -187,7 +202,7 @@ static THD_FUNCTION(imuThd, arg) {
       } while (pending_flags && !foundheader);
 
       FLUSH_I_QUEUE(IMUDRIVER);
-      memset((void*)sdrxbuf, 0, SERIAL_BUFFERS_SIZE);               //Flush RX buffer
+      memset((void*)imusdrxbuf, 0, SERIAL_BUFFERS_SIZE);               //Flush RX buffer
 
     } else {
 
@@ -203,6 +218,8 @@ void imuInit(void) {
   sdStart(IMUDRIVER, &SerialCfg);
 
   memset((void*) &imu, 0, sizeof(imu_t));
+
+  memset((void*) imusdrxbuf, 0, SERIAL_BUFFERS_SIZE);
 
   chThdCreateStatic(imuThd_wa, sizeof(imuThd_wa),
                     NORMALPRIO + 4, imuThd, NULL);

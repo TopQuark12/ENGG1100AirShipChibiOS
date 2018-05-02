@@ -113,7 +113,10 @@ CSRC = $(STARTUPSRC) \
        $(PLATFORMSRC) \
        $(BOARDSRC) \
        $(TESTSRC) \
-       main.c MotorPWM.c Bluetooth.c Tof.c imu.c
+       main.c MotorPWM.c Bluetooth.c Tof.c imu.c \
+       dsp/FastMathFunctions/arm_cos_f32.c \
+       dsp/CommonTables/arm_common_tables.c \
+       Motor.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -145,7 +148,8 @@ ASMSRC = $(STARTUPASM) $(PORTASM) $(OSALASM)
 INCDIR = $(STARTUPINC) $(KERNINC) $(PORTINC) $(OSALINC) \
          $(HALINC) $(PLATFORMINC) $(BOARDINC) $(TESTINC) \
          $(CHIBIOS)/os/various \
-         $(CHIBIOS)/dev/inc
+         $(CHIBIOS)/dev/inc \
+         $(CHIBIOS)/os/ext/CMSIS/include
 
 #
 # Project, sources and paths

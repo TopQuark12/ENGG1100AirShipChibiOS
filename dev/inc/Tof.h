@@ -8,6 +8,9 @@
 #ifndef INC_TOF_H_
 #define INC_TOF_H_
 
+#define ARM_MATH_CM3
+#include "arm_math.h"
+
 #define TOFDRIVER           &SD1
 
 #define TOFFRAMEHEAD           38
